@@ -27,7 +27,11 @@ mapkit.init({
     }
 });
 
-    let search = new mapkit.Search({ region: map.region });
+  
+       
+var map = new mapkit.Map("map");
+</script>
+    <script>  let search = new mapkit.Search({ region: map.region });
 search.autocomplete('searchterm', (error, data) => {
     if (error) {
         return;
@@ -35,8 +39,6 @@ search.autocomplete('searchterm', (error, data) => {
         // handle the results
     });
 });
-       
-var map = new mapkit.Map("map");
-</script>
+    </script>
 </body>
 </html>
