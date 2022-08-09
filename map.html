@@ -2,23 +2,16 @@
 <html>
 <head>
     <title>mmWave.one - Mllimeter Wave Coverage</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
-
-<style>
-#map {
-    width: 100%;
-    height: 550px;
-}
-</style>
-
-
+    <link rel="stylesheet" href="map.style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 </head>
 
 <body>
-<!-- <div id="map" width="100%" border="0" cellspacing="0" cellpadding="0"></div> REMOVE FIRST MAP -->
+
 
 <script>
 const tokenID = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRCOTQ3Sk1SMlcifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjYwMDU5MzMwLCJleHAiOjE2ODUzMTg0MDAsIm9yaWdpbiI6Imh0dHBzOi8vbW13YXZlLm9uZSJ9.S9ISnIfF9VGrGIJzevs8qNmMBMwNoWwvMeLzox-_WcWKOkHUVEZIYM7wQjWBBxBs6wx47SKLJu2ptlpTtZeiCg";
@@ -51,32 +44,6 @@ search.autocomplete('searchterm', (error, data) => {
 
 <div id="map"></div>
     
-    <style>
-    .mapSearchWrapper {
-        position: relative;
-    }
-    .mapSearchInput {
-        width: 100%;
-        padding: 4px;
-    }
-    .mapSearchResults {
-        display: none;
-        position: absolute; 
-        top: 20px; 
-        left: 0px;
-        z-index:9999;
-        background: #FFFFFF; 
-        border: 1px #CCCCCC solid;
-        font-family: sans-serif;
-    }
-    .mapSearchResultsItem {
-        padding: 4px;
-        border-bottom: 1px #CCCCCC solid;
-    }
-    .mapSearchResultsItem:hover {
-        background: #EEEEEE;
-    }
-</style>
 <script type="text/javascript">
     // Initialise MapKit
     mapkit.init({
