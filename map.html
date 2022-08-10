@@ -25,7 +25,8 @@ mapkit.init({
 
 
 var map = new mapkit.Map("map");
-mapView.showsUserLocation = true;
+map.tracksUserLocation = true;
+map.showsUserLocation = true;
     
 </script>
     <script>  let search = new mapkit.Search({ region: map.region });
