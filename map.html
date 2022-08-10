@@ -113,7 +113,7 @@ search.autocomplete('searchterm', (error, data) => {
     
     var MarkerAnnotation = mapkit.MarkerAnnotation,
             clickAnnotation;
-        var dca = new mapkit.Coordinate(38.8512420, -77.0402315),
+        var sofi = new mapkit.Coordinate(33.9533738, -118.3390510),
             work = new mapkit.Coordinate(37.3349, -122.0090201);
         
         mapkit.init({
@@ -129,11 +129,12 @@ search.autocomplete('searchterm', (error, data) => {
         // var map = new mapkit.Map("map");
         
         // Setting properties on creation:
-        var dcaAnnotation = new MarkerAnnotation(dca);
-        dcaAnnotation.color = "#4888E8"; 
-        dcaAnnotation.title = "Ronald Reagan Washington National Airport";
-        dcaAnnotation.selected = "true";
-        dcaAnnotation.glyphText = "✈️";
+        var sofiAnnotation = new MarkerAnnotation(sofi);
+        sofiAnnotation.color = "#7079F7"; 
+        sofiAnnotation.title = "SoFi Stadium";
+        sofiAnnotation.subtitle = "Inglewood, CA";
+        sofiAnnotation.selected = "true";
+        sofiAnnotation.glyphText = "🏈";
         
         // Setting properties after creation:
         var workAnnotation = new MarkerAnnotation(work);
@@ -143,7 +144,7 @@ search.autocomplete('searchterm', (error, data) => {
         workAnnotation.glyphText = "";
         
         // Add and show both annotations on the map
-        map.showItems([dcaAnnotation, workAnnotation]);
+        map.showItems([sofiAnnotation, workAnnotation]);
         
         // Drop an annotation where a Shift-click is detected:
         map.element.addEventListener("click", function(event) {
