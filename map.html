@@ -113,7 +113,7 @@ search.autocomplete('searchterm', (error, data) => {
     
     var MarkerAnnotation = mapkit.MarkerAnnotation,
             clickAnnotation;
-        var sfo = new mapkit.Coordinate(37.616934, -122.383790),
+        var dca = new mapkit.Coordinate(38.8512420, -77.0402315),
             work = new mapkit.Coordinate(37.3349, -122.0090201);
         
         mapkit.init({
@@ -129,13 +129,16 @@ search.autocomplete('searchterm', (error, data) => {
         var map = new mapkit.Map("map");
         
         // Setting properties on creation:
-        var sfoAnnotation = new MarkerAnnotation(sfo, { color: "#f4a56d", title: "SFO", glyphText: "✈️" });
+        var dcaAnnotation = new MarkerAnnotation(dca);
+        dcaAnnotation.color = "#4888E8"; 
+        dcaAnnotation.title = "Ronald Reagan Washington National Airport";
+        dcaAnnotation.selected = "true";
+        dcaAnnotation.glyphText = "✈️";
         
         // Setting properties after creation:
         var workAnnotation = new MarkerAnnotation(work);
         workAnnotation.color = "#969696"; 
-        workAnnotation.title = "Work";
-        workAnnotation.subtitle = "Apple Park";
+        workAnnotation.title = "Apple Park";
         workAnnotation.selected = "true";
         workAnnotation.glyphText = "";
         
