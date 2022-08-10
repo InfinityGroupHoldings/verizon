@@ -114,7 +114,7 @@ search.autocomplete('searchterm', (error, data) => {
     var MarkerAnnotation = mapkit.MarkerAnnotation,
             clickAnnotation;
         var sofi = new mapkit.Coordinate(33.9533738, -118.3390510),
-            work = new mapkit.Coordinate(37.3349, -122.0090201);
+            indi = new mapkit.Coordinate(39.79460, -86.23421);
         
         mapkit.init({
             authorizationCallback: function(done) {
@@ -137,15 +137,15 @@ search.autocomplete('searchterm', (error, data) => {
         sofiAnnotation.glyphText = "🏈";
         
         // Setting properties after creation:
-        var workAnnotation = new MarkerAnnotation(work);
-        workAnnotation.color = "#EE79AC"; 
-        workAnnotation.title = "Indianapolis Motor Speedway";
+        var workAnnotation = new MarkerAnnotation(indi);
+        indiAnnotation.color = "#EE79AC"; 
+        indiAnnotation.title = "Indianapolis Motor Speedway";
         indiAnnotation.subtitle = "Indianapolis, IN";
-        workAnnotation.selected = "true";
-        workAnnotation.glyphText = "🏁";
+        indiAnnotation.selected = "true";
+        indiAnnotation.glyphText = "🏁";
         
         // Add and show both annotations on the map
-        map.showItems([sofiAnnotation, workAnnotation]);
+        map.showItems([sofiAnnotation, indiAnnotation]);
         
         // Drop an annotation where a Shift-click is detected:
         map.element.addEventListener("click", function(event) {
