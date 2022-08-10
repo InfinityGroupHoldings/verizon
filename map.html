@@ -138,10 +138,11 @@ search.autocomplete('searchterm', (error, data) => {
         
         // Setting properties after creation:
         var workAnnotation = new MarkerAnnotation(work);
-        workAnnotation.color = "#969696"; 
-        workAnnotation.title = "Apple Park";
+        workAnnotation.color = "#EE79AC"; 
+        workAnnotation.title = "Indianapolis Motor Speedway";
+        indiAnnotation.subtitle = "Indianapolis, IN";
         workAnnotation.selected = "true";
-        workAnnotation.glyphText = "";
+        workAnnotation.glyphText = "🏁";
         
         // Add and show both annotations on the map
         map.showItems([sofiAnnotation, workAnnotation]);
