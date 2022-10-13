@@ -15,7 +15,13 @@
 
 
 <script>
- 
+  const tokenID = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkhZMjg1NFI5UEYifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjY1Njc3NDc3LCJleHAiOjE2NjgyNzI5Mjd9.nOXSq_DjJ2pKPdOOOKPa4WuWd94T4nROLwVTB73TyAy9XJcvOBgnNB_W_MA5pZ3pTfg-6mPFKOeILqh9GHdCRQ";
+
+ mapkit.init({
+   authorizationCallback: function(done) {
+      done(tokenID);
+    }
+});
 
 
 var map = new mapkit.Map("map");
@@ -129,7 +135,7 @@ search.autocomplete('searchterm', (error, data) => {
                 xhr.send();
             }
         });
-        // var map = new mapkit.Map("map");
+        var map = new mapkit.Map("map");
         
         // Setting properties on creation:
         var sofiAnnotation = new MarkerAnnotation(sofi);
@@ -170,8 +176,8 @@ search.autocomplete('searchterm', (error, data) => {
         
             var coordinate = map.convertPointOnPageToCoordinate(new DOMPoint(event.pageX, event.pageY));
             clickAnnotation = new MarkerAnnotation(coordinate, {
-                title: "Click!",
-                color: "#c969e0"
+                title: "Dropped Pin",
+                color: "#ff0000"
             });
             map.addAnnotation(clickAnnotation);
         });
