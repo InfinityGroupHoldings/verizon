@@ -48,16 +48,22 @@ search.autocomplete('searchterm', (error, data) => {
     
 <script type="text/javascript">
     // Initialise MapKit
-    mapkit.init({
-        authorizationCallback: function(done) {
-        done('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRCOTQ3Sk1SMlcifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjYwMDU5MzMwLCJleHAiOjE2ODUzMTg0MDAsIm9yaWdpbiI6Imh0dHBzOi8vbW13YXZlLm9uZSJ9.S9ISnIfF9VGrGIJzevs8qNmMBMwNoWwvMeLzox-_WcWKOkHUVEZIYM7wQjWBBxBs6wx47SKLJu2ptlpTtZeiCg');
-        }
-    });
-    // Create an initial region. This also weights the search area 
+   // mapkit.init({
+        // authorizationCallback: function(done) {
+        //done('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRCOTQ3Sk1SMlcifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjYwMDU5MzMwLCJleHAiOjE2ODUzMTg0MDAsIm9yaWdpbiI6Imh0dHBzOi8vbW13YXZlLm9uZSJ9.S9ISnIfF9VGrGIJzevs8qNmMBMwNoWwvMeLzox-_WcWKOkHUVEZIYM7wQjWBBxBs6wx47SKLJu2ptlpTtZeiCg');
+      //  }
+    //});
+  //  // Create an initial region. This also weights the search area 
     var myRegion = new mapkit.CoordinateRegion(
         new mapkit.Coordinate(38.89544, -77.03128),
         new mapkit.CoordinateSpan(0.05, 0.05)
     );
+    
+    var map = new mapkit.Map("map");
+    map.tracksUserLocation = true;
+    map.showsUserLocation = true;
+    
+    
     // Create map on the id 'map'
     var map = new mapkit.Map("map");
     map.region = myRegion;
