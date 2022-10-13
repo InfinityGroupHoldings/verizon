@@ -15,7 +15,7 @@
 
 
 <script>
-const tokenID = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkhZMjg1NFI5UEYifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjY1NjI5NzUzLCJleHAiOjE2NjgyMjUzMDAsIm9yaWdpbiI6Imh0dHBzOi8vdmVyaXpvbi5tbXdhdmUub25lIn0.b5I_GHinzXyy0vfIKs8oHsHfMi0sZy99TvnVPreZfjh5v0v9vxyz3fNh2PGaxMefAJVKsMEJ9g4XFK0DAMrg2g";
+const tokenID = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkhZMjg1NFI5UEYifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjY1Njc3NDc3LCJleHAiOjE2NjgyNzI5Mjd9.nOXSq_DjJ2pKPdOOOKPa4WuWd94T4nROLwVTB73TyAy9XJcvOBgnNB_W_MA5pZ3pTfg-6mPFKOeILqh9GHdCRQ";
 
 mapkit.init({
     authorizationCallback: function(done) {
@@ -118,6 +118,7 @@ search.autocomplete('searchterm', (error, data) => {
             clickAnnotation;
         var sofi = new mapkit.Coordinate(33.9533738, -118.3390510),
             indi = new mapkit.Coordinate(39.79460, -86.23421);
+            nyc = new mapkit.Coordinate(40.71298, -74.00720);
         
         mapkit.init({
             authorizationCallback: function(done) {
@@ -146,9 +147,17 @@ search.autocomplete('searchterm', (error, data) => {
         indiAnnotation.subtitle = "Indianapolis, IN";
         indiAnnotation.selected = "true";
         indiAnnotation.glyphText = "🏁";
+    
+    
+        var nycAnnotation = new MarkerAnnotation(nyc);
+        nycAnnotation.color = "#808080"; 
+        nycAnnotation.title = "New York City";
+        nycAnnotation.subtitle = "New York";
+        nycAnnotation.selected = "true";
+        nycAnnotation.glyphText = "🏙";
         
         // Add and show both annotations on the map
-        map.showItems([sofiAnnotation, indiAnnotation]);
+        map.showItems([sofiAnnotation, indiAnnotation, nycAnnotation]);
         
         // Drop an annotation where a Shift-click is detected:
         map.element.addEventListener("click", function(event) {
