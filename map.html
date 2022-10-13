@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="./favicon.svg">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 </head>
 
@@ -15,17 +15,10 @@
 
 
 <script>
- const tokenID = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkhZMjg1NFI5UEYifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjY1Njc3NDc3LCJleHAiOjE2NjgyNzI5Mjd9.nOXSq_DjJ2pKPdOOOKPa4WuWd94T4nROLwVTB73TyAy9XJcvOBgnNB_W_MA5pZ3pTfg-6mPFKOeILqh9GHdCRQ";
-
- mapkit.init({
-   authorizationCallback: function(done) {
-      done(tokenID);
-    }
-});
+ 
 
 
-
-// var map = new mapkit.Map("map");
+var map = new mapkit.Map("map");
 map.tracksUserLocation = true;
 map.showsUserLocation = true;
     
@@ -48,12 +41,12 @@ search.autocomplete('searchterm', (error, data) => {
     
 <script type="text/javascript">
     // Initialise MapKit
-   // mapkit.init({
-        // authorizationCallback: function(done) {
-        //done('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRCOTQ3Sk1SMlcifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjYwMDU5MzMwLCJleHAiOjE2ODUzMTg0MDAsIm9yaWdpbiI6Imh0dHBzOi8vbW13YXZlLm9uZSJ9.S9ISnIfF9VGrGIJzevs8qNmMBMwNoWwvMeLzox-_WcWKOkHUVEZIYM7wQjWBBxBs6wx47SKLJu2ptlpTtZeiCg');
-      //  }
-    //});
-  //  // Create an initial region. This also weights the search area 
+    mapkit.init({
+        authorizationCallback: function(done) {
+        done('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRCOTQ3Sk1SMlcifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjYwMDU5MzMwLCJleHAiOjE2ODUzMTg0MDAsIm9yaWdpbiI6Imh0dHBzOi8vbW13YXZlLm9uZSJ9.S9ISnIfF9VGrGIJzevs8qNmMBMwNoWwvMeLzox-_WcWKOkHUVEZIYM7wQjWBBxBs6wx47SKLJu2ptlpTtZeiCg');
+       }
+    });
+  //  Create an initial region. This also weights the search area 
     var myRegion = new mapkit.CoordinateRegion(
         new mapkit.Coordinate(38.89544, -77.03128),
         new mapkit.CoordinateSpan(0.05, 0.05)
