@@ -1,0 +1,30 @@
+#map {
+    width: 100%;
+    height: 550px;
+    /* This should not be set to 100% */
+}
+
+.mapSearchWrapper {
+    position: relative;
+}
+.mapSearchInput {
+    width: 100%;
+    padding: 4px;
+}
+.mapSearchResults {
+    display: none;
+    position: absolute; 
+    top: 20px; 
+    left: 0px;
+    z-index:9999;
+    background: #FFFFFF; 
+    border: 1px #CCCCCC solid;
+    font-family: sans-serif;
+}
+.mapSearchResultsItem {
+    padding: 4px;
+    border-bottom: 1px #CCCCCC solid;
+}
+.mapSearchResultsItem:hover {
+    background: #EEEEEE;
+}
