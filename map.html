@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>mmWave.one - Millimeter Wave Coverage</title>
-    <link rel="stylesheet" href="map.style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mmWave.one - Millimetre Wave Coverage</title>
+    <link rel="stylesheet" href="./map.style.css">
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./favicon.svg">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 </head>
@@ -38,7 +39,7 @@ search.autocomplete('searchterm', (error, data) => {
     });
     </script>
     <div class="mapSearchWrapper">
-    <input type="text" id="mapLookup" class="mapSearchInput">
+    <input aria-label="mapLookup" type="text" id="mapLookup" class="mapSearchInput">
     <div id="results" class="mapSearchResults">
     </div>
 </div>
@@ -46,17 +47,7 @@ search.autocomplete('searchterm', (error, data) => {
 <div id="map"></div>
     
 <script type="text/javascript">
-    // Initialise MapKit
-    mapkit.init({
-        authorizationCallback: function(done) {
-        done('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRCOTQ3Sk1SMlcifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjYwMDU5MzMwLCJleHAiOjE2ODUzMTg0MDAsIm9yaWdpbiI6Imh0dHBzOi8vbW13YXZlLm9uZSJ9.S9ISnIfF9VGrGIJzevs8qNmMBMwNoWwvMeLzox-_WcWKOkHUVEZIYM7wQjWBBxBs6wx47SKLJu2ptlpTtZeiCg');
-       }
-    });
-  //  Create an initial region. This also weights the search area 
-    var myRegion = new mapkit.CoordinateRegion(
-        new mapkit.Coordinate(38.89544, -77.03128),
-        new mapkit.CoordinateSpan(0.05, 0.05)
-    );
+    
     
     var map = new mapkit.Map("map");
     map.tracksUserLocation = true;
@@ -64,7 +55,7 @@ search.autocomplete('searchterm', (error, data) => {
     
     
     // Create map on the id 'map'
-    var map = new mapkit.Map("map");
+
     map.region = myRegion;
     // Listen for keyup in the input field
     $('#mapLookup').keyup(function(){
@@ -135,7 +126,7 @@ search.autocomplete('searchterm', (error, data) => {
                 xhr.send();
             }
         });
-        var map = new mapkit.Map("map");
+       // var map = new mapkit.Map("map");
         
         // Setting properties on creation:
         var sofiAnnotation = new MarkerAnnotation(sofi);
