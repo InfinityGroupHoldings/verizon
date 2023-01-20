@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./map.style.css">
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./favicon.svg">
+    <script src="./keys.json" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 </head>
@@ -18,6 +19,9 @@
 <script>
     // import tokenID from "./config.js";
   // const tokenID = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjczWFJKMkxVTTMifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjc0MjQxOTQ3LCJleHAiOjE2NzY4MzM4MDUsIm9yaWdpbiI6Imh0dHBzOi8vdmVyaXpvbi5tbXdhdmUub25lLyJ9.p4VSM3LiP-b4Fv8xMSDjwVXSSaNzaSoHEgMtvwPScoyZTIl60WADTt-Dh0tOiA8cuuFm_Xb5Frzr8UHp6phd3Q";
+
+    var tokenID = JSON.parse(data);
+    alert(tokenID);
 
  mapkit.init({
    authorizationCallback: function(done) {
