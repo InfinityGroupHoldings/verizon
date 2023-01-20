@@ -19,11 +19,10 @@
     <script>
         
         const tokenID = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjczWFJKMkxVTTMifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjc0MjQ1MTgyLCJleHAiOjE2ODM3NjMyMDAsIm9yaWdpbiI6Imh0dHA6Ly92ZXJpem9uLm1td2F2ZS5vbmUifQ.bZJ6v2NfX7PORdsHTFV05MPQ3pzZzC8I1Z_8dCFyuB_v92vyDcV_waOgXaqQxeaiWQ5z4zGV7yNYwMkZKQ9ACw";
-
-        <!-- const fs = require('fs');
-        var tokenID = fs.readFileSync('./config.js', 'utf8');
-        -->
+        
+        window.onload = function() {
         alert(tokenID);
+        };
         
         mapkit.init({
             authorizationCallback: function (done) {
