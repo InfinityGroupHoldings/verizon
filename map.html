@@ -30,6 +30,9 @@
 
         var {tokenID} = require('./config');
 
+        alert({tokenID});
+        alert(tokenID);
+        
         mapkit.init({
             authorizationCallback: function (done) {
                 done(tokenID);
