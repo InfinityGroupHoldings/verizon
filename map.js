@@ -22,9 +22,6 @@ search.autocomplete('searchterm', (error, data) => {
 // map.tracksUserLocation = true;
 // map.showsUserLocation = true;
 
-
-// Create map on the id 'map'
-
 map.region = myRegion;
 // Listen for keyup in the input field
 $('#mapLookup').keyup(function () {
