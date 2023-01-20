@@ -28,8 +28,8 @@
         //var tokenID = JSON.parse(tokenID);
         //alert(tokenID);
 
-        const {tokenID} = require('./config.js');
-        const tokenID = {tokenID};
+        const fs = require('fs');
+        const tokenID = fs.readFileSync('./config.js', 'utf8');
 
         alert({tokenID});
         alert(tokenID);
