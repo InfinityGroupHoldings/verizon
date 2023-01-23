@@ -14,9 +14,6 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
-</head>
-
-<body>
     <!-- TODO: Add the value of data-initial-token with a JWT
 dynamically generated on the server -->
     <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit"
@@ -106,7 +103,7 @@ dynamically generated on the server -->
             }
 
             // Read the GeoJSON, setting the color for each overlay as it is parsed
-            mapkit.importGeoJSON("states.json", {
+            mapkit.importGeoJSON("locations.json", {
                 /**
                  * Some states are MultiPolygons. To consolidate code, we will convert
                  * them into a single PolygonOverlay by concatenating their points.
@@ -192,6 +189,23 @@ dynamically generated on the server -->
         main();
 
     </script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="map"></div>
+        <div id="infoPopup">
+            <div class="info">
+                <span>State:</span>
+                <span class="info-country"></span>
+            </div>
+            <div class="info">
+                <span>Population:</span>
+                <span class="info-population"></span>
+            </div>
+        </div>
+        <div class="map-legend"></div>
+    </div>
 
 </body>
 
