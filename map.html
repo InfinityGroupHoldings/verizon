@@ -166,7 +166,7 @@ dynamically generated on the server -->
             }
 
             // Read the GeoJSON, setting the color for each overlay as it is parsed
-            mapkit.importGeoJSON("locations.geojson", {
+            mapkit.importGeoJSON("states.json", {
                 /**
                  * Some states are MultiPolygons. To consolidate code, we will convert
                  * them into a single PolygonOverlay by concatenating their points.
