@@ -84,11 +84,9 @@
         data-libraries="map,overlays" data-initial-token=""></script>
     <script type="module">
         //START
-        var encryptedMessage = CryptoJS.AES.encrypt("Message", "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy");
+        import tokenID from './config.js'
 
-        var decryptedMessage = CryptoJS.AES.decrypt(encrypted, "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy");
-
-        alert(decryptedMessage);
+        alert(tokenID);
         // END
 
         /*
