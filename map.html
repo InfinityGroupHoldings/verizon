@@ -116,11 +116,6 @@ dynamically generated on the server -->
 
         const jwt = decryptedData;
 
-
-        /**
-        * Wait for MapKit JS to be loaded by the script tag,
-        * calls `mapkit.init` to set authorizationCallback with your JWT.
-        */
         const setupMapKitJs = async () => {
             if (!window.mapkit || window.mapkit.loadedLibraries.length === 0) {
                 // mapkit.core.js or the libraries are not loaded yet.
