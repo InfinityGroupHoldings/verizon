@@ -6,7 +6,7 @@ var encryptedData = "+3L52bG3jfc/PIGMSR9mzHhe1EgxB0ixBG6iEcRfZOZfHd1+xYkkt3N6KZ5
 
 const password = pass1 + "RqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpk" + pass2
 
-let decryptedData = "";
+export var decryptedData = "";
 
 const decipher = crypto.createDecipher("aes-256-cbc", password);
 
