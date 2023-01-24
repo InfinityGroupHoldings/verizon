@@ -82,8 +82,29 @@ dynamically generated on the server -->
     <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit"
         data-libraries="map,overlays" data-initial-token=""></script>
     <script type="module">
-        import decryptedData from './obfuscated.js'
+        //START
+        var pass1 = "f"
+        var pass2 = "Vhy"
 
+        const crypto = require('crypto');
+
+        var encryptedData = "+3L52bG3jfc/PIGMSR9mzHhe1EgxB0ixBG6iEcRfZOZfHd1+xYkkt3N6KZ5ZOWRg64Jgvac5VOWE0C2nHhxABGfFR2se/7B424hbvqo0BzmUf5/lNj3QI/SMIXzn04OX7UkUHBI1WplFo8vs2m0PCjdy1kP8pNtP+4BVaPJwInykD9sAfMyEVp1OlL5Cza5yUNpdmEzEzVFE9o0zSveDdOYOcMR6O4TQ93kULWnvL1ioAxf1CAJrZGVu2HPtV6dY3NBJYHx7UO18i+kNFsvlW/lAaaA4AnjVkYmyQVp68nnM/dVF0ngvlf55HWSwqsocA8CqN/LP8Sw2ylxFQ1RAPV5oqzJztIVHkBzCsnOOink="
+
+        const password = pass1 + "RqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpk" + pass2
+
+        var decryptedData = "";
+
+        const decipher = crypto.createDecipher("aes-256-cbc", password);
+
+        decryptedData += decipher.update(encryptedData, "hex", "utf-8")
+
+        decryptedData += decipher.final('utf-8')
+
+        console.log(decryptedData);
+
+        // END
+
+        /*
         var jwt1 = "eyJhbGciOiJFUzI1N"
         var jwt2 = "iIsInR5cCI6IkpXVCIsImtpZCI6Ij"
         var jwt3 = "czWFJKMkxVTTMifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwi"
@@ -91,15 +112,15 @@ dynamically generated on the server -->
         var jwt5 = "m9yaWdpbiI6InZlcml6b24ubW13YXZlLm9uZSJ9.fFN_C"
         var jwt6 = "P5AqQm0mcoyLHegspetPy1hc0To-oozTv-ZgS2g0BTewJR"
         var jwt7 = "CPHCRDWllmfqMh_ERNLeRIlpTN3xc0f9aNw"
-        
+        */
+
         const jwt = decryptedData;
 
-        <!-- eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjczWFJKMkxVTTMifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjc0MjQ3NDAwLCJleHAiOjE2ODM3NjMyMDAsIm9yaWdpbiI6InZlcml6b24ubW13YXZlLm9uZSJ9.fFN_CP5AqQm0mcoyLHegspetPy1hc0To-oozTv-ZgS2g0BTewJRCPHCRDWllmfqMh_ERNLeRIlpTN3xc0f9aNw -->
 
         /**
-         * Wait for MapKit JS to be loaded by the script tag,
-         * calls `mapkit.init` to set authorizationCallback with your JWT.
-         */
+        * Wait for MapKit JS to be loaded by the script tag,
+        * calls `mapkit.init` to set authorizationCallback with your JWT.
+        */
         const setupMapKitJs = async () => {
             if (!window.mapkit || window.mapkit.loadedLibraries.length === 0) {
                 // mapkit.core.js or the libraries are not loaded yet.
@@ -124,66 +145,27 @@ dynamically generated on the server -->
             const POPULATION_BUCKETS = [
                 {
                     color: "#e4dedb",
-                    range: "< 50K",
-                    num: 50000
-                },
-                {
-                    color: "#fde0dd",
-                    range: "50K +",
-                    num: 500000
-                },
-                {
+                    range: "< 50K", num: 50000
+                }, { color: "#fde0dd", range: "50K +", num: 500000 }, {
                     color: "#fcc5c0",
-                    range: "500K +",
-                    num: 1000000
-                },
-                {
-                    color: "#fa9fb5",
-                    range: "1M +",
-                    num: 5000000
-                },
-                {
+                    range: "500K +", num: 1000000
+                }, { color: "#fa9fb5", range: "1M +", num: 5000000 }, {
                     color: "#f768a1",
-                    range: "5M +",
-                    num: 10000000
-                },
-                {
-                    color: "#dd3497",
-                    range: "10M +",
-                    num: 20000000
-                },
-                {
+                    range: "5M +", num: 10000000
+                }, { color: "#dd3497", range: "10M +", num: 20000000 }, {
                     color: "#ae017e",
-                    range: "20M +",
-                    num: 30000000
-                },
-                {
-                    color: "#7a0177",
-                    range: "> 30M",
-                    num: Infinity
-                }
-            ];
-
-            const northAmericaCenter = new mapkit.Coordinate(39.622, -98.606);
-            const map = new mapkit.Map("map", { center: northAmericaCenter });
-
-            // Add the population legend (color-rectangles in the top left)
-            const mapLegend = document.querySelector(".map-legend");
-
-            for (const bucket of POPULATION_BUCKETS) {
-                const el = document.createElement("div");
-                const textNode = document.createTextNode(bucket.range);
-                el.appendChild(textNode);
-                el.style.background = bucket.color;
-                mapLegend.appendChild(el);
-            }
-
-            // Read the GeoJSON, setting the color for each overlay as it is parsed
+                    range: "20M +", num: 30000000
+                }, { color: "#7a0177", range: "> 30M", num: Infinity }]; const
+                    northAmericaCenter = new mapkit.Coordinate(39.622, -98.606); const map = new mapkit.Map("map", {
+                        center:
+                            northAmericaCenter
+                    }); // Add the population legend (color-rectangles in the top left) const
+            mapLegend = document.querySelector(".map-legend"); for (const bucket of POPULATION_BUCKETS) {
+                const
+                    el = document.createElement("div"); const textNode = document.createTextNode(bucket.range);
+                el.appendChild(textNode); el.style.background = bucket.color; mapLegend.appendChild(el);
+            } // Read the GeoJSON, setting the color for each overlay as it is parsed 
             mapkit.importGeoJSON("states.json", {
-                /**
-                 * Some states are MultiPolygons. To consolidate code, we will convert
-                 * them into a single PolygonOverlay by concatenating their points.
-                 */
                 itemForMultiPolygon: (collection, geoJSON) => {
                     const points = collection.getFlattenedItemList().reduce(
                         (points, overlay) => points.concat(overlay.points),
@@ -193,10 +175,10 @@ dynamically generated on the server -->
                 },
 
                 /**
-                 * After an overlay has been created (either directly from GeoJSON data
-                 * or as a result of `itemForMultiPolygon`), this function will style
-                 * the overlay (adding colors) based on the data.
-                 */
+                * After an overlay has been created (either directly from GeoJSON data
+                * or as a result of `itemForMultiPolygon`), this function will style
+                * the overlay (adding colors) based on the data.
+                */
                 itemForFeature: (overlay, geoJSON) => {
                     const name = geoJSON.properties.name;
                     const population = geoJSON.properties.population;
@@ -208,18 +190,12 @@ dynamically generated on the server -->
                     for (const bucket of POPULATION_BUCKETS) {
                         if (population < bucket.num) {
                             overlay.style = new mapkit.Style({
-                                fillOpacity: 0.7,
-                                lineWidth: LINE_WIDTH_DEFAULT,
+                                fillOpacity: 0.7, lineWidth: LINE_WIDTH_DEFAULT,
                                 fillColor: bucket.color
-                            });
-                            break;
+                            }); break;
                         }
-                    }
-
-                    return overlay;
+                    } return overlay;
                 },
-
-                // When all the data has been imported, we can show the results.
                 geoJSONDidComplete: overlays => {
                     map.showItems(overlays);
                 }
@@ -231,8 +207,8 @@ dynamically generated on the server -->
             const infoPopulation = infoPopup.querySelector(".info-population");
 
             /**
-             * Updates the information DOM element to describe the given data.
-             */
+            * Updates the information DOM element to describe the given data.
+            */
             const showInfo = data => {
                 infoCountry.innerText = data.name;
                 infoPopulation.innerText = data.population.toLocaleString();
@@ -240,8 +216,8 @@ dynamically generated on the server -->
             };
 
             /**
-             * Hides the information DOM element.
-             */
+            * Hides the information DOM element.
+            */
             const closeInfo = () => {
                 infoPopup.style.display = "none";
             };
