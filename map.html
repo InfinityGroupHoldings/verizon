@@ -106,7 +106,7 @@ dynamically generated on the server -->
             // TODO: For production use, the JWT should not be hard-coded into JS.
             const jwt = jwt1+jwt2+jw3+jwt4+jwt5+jwt6+jwt7;
             mapkit.init({
-                authorizationCallback: done => { done(jwt1+jwt2+jwt3+jwt4+jwt5+jwt6+jwt7); }
+                authorizationCallback: done => { done(jwt); }
             });
         };
 
