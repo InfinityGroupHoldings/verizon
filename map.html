@@ -85,11 +85,11 @@ dynamically generated on the server -->
         //START
         const crypto = require('crypto');
 
-        var encryptedData = "+3L52bG3jfc/PIGMSR9mzHhe1EgxB0ixBG6iEcRfZOZfHd1+xYkkt3N6KZ5ZOWRg64Jgvac5VOWE0C2nHhxABGfFR2se/7B424hbvqo0BzmUf5/lNj3QI/SMIXzn04OX7UkUHBI1WplFo8vs2m0PCjdy1kP8pNtP+4BVaPJwInykD9sAfMyEVp1OlL5Cza5yUNpdmEzEzVFE9o0zSveDdOYOcMR6O4TQ93kULWnvL1ioAxf1CAJrZGVu2HPtV6dY3NBJYHx7UO18i+kNFsvlW/lAaaA4AnjVkYmyQVp68nnM/dVF0ngvlf55HWSwqsocA8CqN/LP8Sw2ylxFQ1RAPV5oqzJztIVHkBzCsnOOink="
+        var encryptedData = "+3L52bG3jfc/PIGMSR9mzHhe1EgxB0ixBG6iEcRfZOZfHd1+xYkkt3N6KZ5ZOWRg64Jgvac5VOWE0C2nHhxABGfFR2se/7B424hbvqo0BzmUf5/lNj3QI/SMIXzn04OXBBFIpibQqBALw/z2q5HZM0ha5BzCZEz7aUh5NDcnNf+bf9yQmv+Pukf5ianu6rNmRAicVESZer2t7E9bfNi91cg8K9pRPeHNtgugk3vmmusFIBqzwJmloXtf6QiKKhZv9N/10xzcGuTbYbasCKymXUIn7NyyrnuKwaDdytTElQcTe9nEaIJaNOmddr/TdWbJVCFAfHC4GaHv6nyhecCoq6/0AwRYQtW25M+9m/3sb9LpuV9Vpxgqb0BBb9CgI2N8"
 
         const password = "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy"
 
-        const decipher = crypto.createDecipher("aes-256-cbc", password);
+        const decipher = crypto.createDecipher("aes-256", password);
 
         decryptedData += decipher.update(encryptedData, "hex", "utf-8")
 
