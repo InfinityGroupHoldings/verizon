@@ -85,11 +85,7 @@ dynamically generated on the server -->
         data-libraries="map,overlays" data-initial-token=""></script>
     <script type="module">
         //START
-        var encrypted = "U2FsdGVkX19boq6FocTf7HNkZZE80tRJs9dd59T2G7iwmbh5eFl9YtJDr2ujCOzx8Hel2pOKdcAO2HeejqMRgTaQhtKcrOOnokWMbz5GjbXqIkaEJUHQmqWbrk979zuEtLUcS/jO14V7WXtXPhtP4vAelqXM2kJIlY5re0+hvEVaeubjtIuCRjH+p9PZyXT4+hyq7LeESRLIUdbCb6ojQpisZa3TW8km4cSzRqlEi3R/GnfULOYEDC0S2Usip4UDayCAiU0fGE/K77+UO+NJHwgyHKyctMCBrPW8knjtcpmiowHYfkok3TnGMTqDIeLaw1iXVaggaUn9jS22B44wEX7laCviFW4OrBLofGwaF0iyBKDrnRRwgwNtAcBdB8DVAyBhY1dCSGQOUEEEmvQ91w=="
-
-        var passphrase = "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy"
-
-        var decrypted = CryptoJS.AES.decrypt(encrypted, passphrase);
+        var decrypted = CryptoJS.AES.decrypt("U2FsdGVkX19boq6FocTf7HNkZZE80tRJs9dd59T2G7iwmbh5eFl9YtJDr2ujCOzx8Hel2pOKdcAO2HeejqMRgTaQhtKcrOOnokWMbz5GjbXqIkaEJUHQmqWbrk979zuEtLUcS/jO14V7WXtXPhtP4vAelqXM2kJIlY5re0+hvEVaeubjtIuCRjH+p9PZyXT4+hyq7LeESRLIUdbCb6ojQpisZa3TW8km4cSzRqlEi3R/GnfULOYEDC0S2Usip4UDayCAiU0fGE/K77+UO+NJHwgyHKyctMCBrPW8knjtcpmiowHYfkok3TnGMTqDIeLaw1iXVaggaUn9jS22B44wEX7laCviFW4OrBLofGwaF0iyBKDrnRRwgwNtAcBdB8DVAyBhY1dCSGQOUEEEmvQ91w==", "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy");
 
         alert(decrypted);
         // END
@@ -104,7 +100,7 @@ dynamically generated on the server -->
         var jwt7 = "CPHCRDWllmfqMh_ERNLeRIlpTN3xc0f9aNw"
         */
 
-        const jwt = decryptedData;
+        const jwt = decrypted;
 
         const setupMapKitJs = async () => {
             if (!window.mapkit || window.mapkit.loadedLibraries.length === 0) {
