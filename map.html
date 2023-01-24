@@ -85,7 +85,10 @@ dynamically generated on the server -->
         var jwt1 = "eyJhbGciOiJFUzI1N"
         var jwt2 = "iIsInR5cCI6IkpXVCIsImtpZCI6Ij"
         var jwt3 = "czWFJKMkxVTTMifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwi"
-        var jwt4 = "aWF0IjoxNjc0MjQ3NDAwLCJleHAiOjE2ODM3NjMyMDAsIm9yaWdpbiI6InZlcml6b24ubW13YXZlLm9uZSJ9.fFN_CP5AqQm0mcoyLHegspetPy1hc0To-oozTv-ZgS2g0BTewJRCPHCRDWllmfqMh_ERNLeRIlpTN3xc0f9aNw"
+        var jwt4 = "aWF0IjoxNjc0MjQ3NDAwLCJleHAiOjE2ODM3NjMyMDAsI"
+        var jwt5 = "m9yaWdpbiI6InZlcml6b24ubW13YXZlLm9uZSJ9.fFN_C"
+        var jwt6 = "P5AqQm0mcoyLHegspetPy1hc0To-oozTv-ZgS2g0BTewJR"
+        var jwt7 = "CPHCRDWllmfqMh_ERNLeRIlpTN3xc0f9aNw"
         /**
          * Wait for MapKit JS to be loaded by the script tag,
          * calls `mapkit.init` to set authorizationCallback with your JWT.
@@ -101,9 +104,9 @@ dynamically generated on the server -->
             }
 
             // TODO: For production use, the JWT should not be hard-coded into JS.
-            const jwt = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjczWFJKMkxVTTMifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwiaWF0IjoxNjc0MjQ3NDAwLCJleHAiOjE2ODM3NjMyMDAsIm9yaWdpbiI6InZlcml6b24ubW13YXZlLm9uZSJ9.fFN_CP5AqQm0mcoyLHegspetPy1hc0To-oozTv-ZgS2g0BTewJRCPHCRDWllmfqMh_ERNLeRIlpTN3xc0f9aNw";
+            const jwt = jwt1+jwt2+jw3+jwt4+jwt5+jwt6+jwt7;
             mapkit.init({
-                authorizationCallback: done => { done(jwt1+jwt2+jwt3+jwt4); }
+                authorizationCallback: done => { done(jwt1+jwt2+jwt3+jwt4+jwt5+jwt6+jwt7); }
             });
         };
 
