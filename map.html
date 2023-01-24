@@ -85,11 +85,11 @@ dynamically generated on the server -->
         data-libraries="map,overlays" data-initial-token=""></script>
     <script type="module">
         //START
-        var encrypted = CryptoJS.AES.encrypt("Message", "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy");
+        var encryptedMessage = CryptoJS.AES.encrypt("Message", "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy");
 
-        var decrypted = CryptoJS.AES.decrypt(encrypted, "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy");
+        var decryptedMessage = CryptoJS.AES.decrypt(encrypted, "fRqcEqmC8m2BZ5dPd3phV9mAGyVQcqzN288fk8PjCttKznmP3xPMZYqcbxBpkVhy");
 
-        alert(decrypted);
+        alert(decryptedMessage);
         // END
 
         /*
