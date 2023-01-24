@@ -82,6 +82,8 @@ dynamically generated on the server -->
     <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit"
         data-libraries="map,overlays" data-initial-token=""></script>
     <script type="module">
+        import {jwt1, jwt3, jwt5, jwt7} from './obfuscated.js'
+        
         var jwt1 = "eyJhbGciOiJFUzI1N"
         var jwt2 = "iIsInR5cCI6IkpXVCIsImtpZCI6Ij"
         var jwt3 = "czWFJKMkxVTTMifQ.eyJpc3MiOiJWNUtWNDhMTThUIiwi"
@@ -89,6 +91,8 @@ dynamically generated on the server -->
         var jwt5 = "m9yaWdpbiI6InZlcml6b24ubW13YXZlLm9uZSJ9.fFN_C"
         var jwt6 = "P5AqQm0mcoyLHegspetPy1hc0To-oozTv-ZgS2g0BTewJR"
         var jwt7 = "CPHCRDWllmfqMh_ERNLeRIlpTN3xc0f9aNw"
+        const jwt = jwt1+jwt2+jw3+jwt4+jwt5+jwt6+jwt7;
+
         /**
          * Wait for MapKit JS to be loaded by the script tag,
          * calls `mapkit.init` to set authorizationCallback with your JWT.
