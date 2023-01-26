@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>mmWave.one - Millimetre Wave Coverage</title>
+    <title>mmWave.one - Millimeter Wave Coverage</title>
     <link rel="stylesheet" href="https://verizon.mmwave.one/map.style.css">
     <link rel="shortcut icon" href="https://verizon.mmwave.one/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://verizon.mmwave.one/favicon.svg">
@@ -84,11 +84,11 @@
     <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit"
         data-libraries="map,overlays" data-initial-token=""></script>
     <script type="module">
-        import _0x4f8b82 from'\x2e\x2f\x63\x6f\x6e\x66\x69\x67\x2e\x6a\x73'
+        import tokenID from './config.js'
 
-        alert(_0x4f8b82);
+        alert(tokenID);
 
-        var jwt=_0x4f8b82;
+        var jwt=tokenID;
 
         const setupMapKitJs = async () => {
             if (!window.mapkit || window.mapkit.loadedLibraries.length === 0) {
