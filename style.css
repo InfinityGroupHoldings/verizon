@@ -6103,12 +6103,6 @@ pre {
     word-wrap: break-word
 }
 
-#footer-esmel {
-    margin-top: 5vh;
-    color: #a0a0a0,!important;
-    text-align: center,!important;
-}
-
 .markdown-body::before {
     display: table;
     content: ""
