@@ -6127,6 +6127,11 @@ pre {
     text-decoration: none
 }
 
+.markdown-body a[href] {
+    color: inherit;
+    text-decoration: none;
+}
+
 .markdown-body .absent {
     color: #cb2431
 }
